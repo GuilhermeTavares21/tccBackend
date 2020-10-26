@@ -163,5 +163,17 @@ module.exports = {
             console.log(error)
             return res.status(500).json('Falha ao carregar adm');
         }
+    },
+    async viewAdm(req, res){
+        try {
+            console.log("a")
+            const admId = req.params.id
+            adm = await Adm.findById(admId)
+            return res.status(200).json(adm)
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json('Falha ao carregar brecho');
+        }
     }
+
 }

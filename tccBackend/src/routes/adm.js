@@ -1,5 +1,5 @@
 const router  = require('express').Router();
-const { adm, findOne, updateAdm, ListAdm, DeleteAdm, Evaluation, loadAdm }  = require('../controllers/adm')
+const { adm, findOne, updateAdm, ListAdm, DeleteAdm, Evaluation, loadAdm, viewAdm }  = require('../controllers/adm')
 const authToken = require('../middleware/auth')
 const multer = require('../middleware/multer')
 
@@ -11,5 +11,6 @@ router.put('/updateAdm', authToken, multer.single("file"), updateAdm)
 router.delete('/deleteAdm', authToken, DeleteAdm)
 router.post('/evaluationAdm/:id', authToken, Evaluation)
 router.get('/loadAdm', authToken, loadAdm)
+router.get('/viewAdm/:id', viewAdm)
 
 module.exports = router;
