@@ -16,6 +16,6 @@ app.use(user)
 app.use(adm)
 app.use(products)
 
-app.listen(3333||process.env.PORT, () => {
+app.listen(process.env.PORT || 3333, () => {
     console.log("Server started")
 })
