@@ -1,3 +1,5 @@
 ID da chave de acesso: AKIAV5W6NBTXQOYVFVOC
 
 Url mongo web: mongodb+srv://StartupClo:clo2020@cluster0.zamz2.mongodb.net/clo?retryWrites=true&w=majority
+
+.env://localhost:27017/clo
