@@ -27,6 +27,9 @@ const productsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    desconto: {
+        type: Number
+    },
     evaluation: Number,
     totalEvaluation: Number,
     mediaEvaluation: Number,
