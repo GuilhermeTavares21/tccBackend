@@ -168,7 +168,7 @@ module.exports = {
         try {
             console.log("a")
             const admId = req.params.id
-            adm = await Adm.findById(admId)
+            adm = await Adm.findById(admId).populate("products")
             return res.status(200).json(adm)
         } catch (error) {
             console.log(error)
