@@ -11,6 +11,7 @@ router.put('/updateAdm', authToken, multer.single("file"), updateAdm)
 router.delete('/deleteAdm', authToken, DeleteAdm)
 router.post('/evaluationAdm/:id', authToken, Evaluation)
 router.get('/loadAdm', authToken, loadAdm)
+
 router.get('/viewAdm/:id', viewAdm)
 
 module.exports = router;
