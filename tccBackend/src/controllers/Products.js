@@ -3,7 +3,7 @@ const Adm = require('../models/Adm');
 module.exports = {
     async products(req, res) {
         try {
-            const { style, size, price, timeUsed, description } = req.body;
+            const { style, size, price, timeUsed, description, desconto } = req.body;
             if (!style || !size || !price || !timeUsed || !description){
                 return res.status(400).json('Campo inválido')
             }
@@ -29,6 +29,7 @@ module.exports = {
                 timeUsed,
                 description,
                 image,
+                desconto,
                 evaluation: 0,
                 totalEvaluation: 0,
                 mediaEvaluation: 0,
