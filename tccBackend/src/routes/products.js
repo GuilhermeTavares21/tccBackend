@@ -6,7 +6,8 @@ const { products,
         FindProductsPrice, 
         FindProductsTimeUsed, 
         DeleteProduct,
-        Evaluation
+        Evaluation,
+        oneProduct
      }  = require('../controllers/Products')
 const authToken = require('../middleware/auth')
 const verifyAdm = require('../middleware/confirmAdm')
@@ -20,4 +21,5 @@ router.post('/findProductsPrice', FindProductsPrice)
 router.post('/findProductsTimesUsed', FindProductsTimeUsed)
 router.delete('/deleteProduct/:id', authToken, DeleteProduct)
 router.post('/evaluationProduct/:id', Evaluation)
+router.get('/oneProduct/:id', oneProduct)
 module.exports = router;
