@@ -108,8 +108,15 @@ module.exports = {
         try {
             const id = req.body.id;
             const userId = req.userId
-
+            const produtoId = await User.findOne({
+                _id: userId,
+                sacola: id
+            })
+            if(produtoId){
+                return res.status(400).json('Esse produto ja foi adicionado')
+            }
             const user = await User.findById(userId)
+
             user.sacola.push(id)
             await user.save()
             const userAdd = await User.findById(userId).populate("sacola")
