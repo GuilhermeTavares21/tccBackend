@@ -80,7 +80,7 @@ module.exports = {
                 alter.password = await bcrypt.hash(password, 12)
             }
             if (name) {
-                alter.name = req.body.name
+                alter.name.toLowerCase() = req.body.name
                 // console.log(req.body.name)
                 
             }
